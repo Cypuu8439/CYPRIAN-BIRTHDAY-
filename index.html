@@ -1,15 +1,32 @@
+
 <!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#101827">
+<meta name="theme-color" content="#0c1220">
 <title>Cyprian | Birthday Celebration</title>
+<meta name="description" content="Join Cyprian's birthday celebration on 19 October. Open the invitation, share the joy, and leave a birthday wish.">
+<meta property="og:title" content="Cyprian's Birthday Celebration">
+<meta property="og:description" content="A new chapter, a grateful heart. Join me on 19 October.">
+<meta property="og:type" content="website">
+
 <style>
-:root{--bg:#0c1220;--panel:#131e30;--panel2:#19263a;--text:#f4f7fb;--muted:#aab6c8;--gold:#e7b957;--blue:#8fb8ff;--line:rgba(255,255,255,.11);--green:#8ee0bd}
+:root{
+--bg:#0c1220;--panel:#131e30;--text:#f4f7fb;
+--muted:#aab6c8;--gold:#e7b957;--blue:#8fb8ff;
+--line:rgba(255,255,255,.11);--green:#8ee0bd
+}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:radial-gradient(ellipse at 80% 0%,#243452 0,transparent 36%),radial-gradient(ellipse at 0% 40%,#172a42 0,transparent 32%),var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.6}
+body{
+margin:0;
+background:radial-gradient(ellipse at 80% 0%,#243452 0,transparent 36%),
+radial-gradient(ellipse at 0% 40%,#172a42 0,transparent 32%),var(--bg);
+color:var(--text);
+font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+line-height:1.6
+}
 a{color:inherit}
 .wrap{width:min(1100px,92%);margin:auto}
 .nav{display:flex;align-items:center;justify-content:space-between;padding:22px 0}
@@ -57,6 +74,44 @@ a{color:inherit}
 .footer{border-top:1px solid var(--line);padding:26px 0 36px;margin-top:40px;color:var(--muted);font-size:.88rem;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .footer strong{color:var(--text)}
 .spark{color:var(--gold)}
+
+/* NEW: Luxury invitation cover */
+.invite-cover{
+position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;
+padding:20px;background:radial-gradient(ellipse at 50% 0%,#30466b 0%,#101b31 48%,#070d19 100%);
+overflow-y:auto
+}
+.invite-card{
+position:relative;overflow:hidden;text-align:center;width:min(100%,520px);
+padding:42px 25px;border:1px solid #e7b957a6;border-radius:28px;
+background:linear-gradient(150deg,#1b2b47f7,#0c1527fa);
+box-shadow:0 25px 90px #0008
+}
+.invite-card:before,.invite-card:after{
+content:"✦  ·  ✧  ·  ✦";display:block;color:#e7b957b0;letter-spacing:12px;font-size:17px
+}
+.invite-card:before{margin-bottom:18px}
+.invite-card:after{margin-top:20px}
+.invite-kicker{font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);font-weight:800}
+.invite-cake{font-size:53px;margin:16px 0 8px;filter:drop-shadow(0 5px 18px #e7b95740)}
+.invite-card h2{font-family:Georgia,"Times New Roman",serif;font-size:clamp(2.2rem,8vw,3.5rem);line-height:1.05;font-weight:400;letter-spacing:-.04em;margin:8px 0 14px}
+.invite-card h2 span{display:block;color:var(--gold);font-style:italic}
+.invite-date{font-size:.8rem;letter-spacing:.22em;color:var(--gold);font-weight:800;margin:20px 0}
+.invite-rule{width:78px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:20px auto}
+.invite-copy{color:#d3d9e7;font-size:.93rem;line-height:1.8;max-width:370px;margin:auto}
+.countdown-label{color:#aab6c8;font-size:.7rem;text-transform:uppercase;letter-spacing:.13em;margin-top:23px}
+.countdown{display:flex;justify-content:center;gap:10px;margin:10px auto 23px}
+.time-box{min-width:59px;padding:9px 7px;border:1px solid #ffffff1c;border-radius:12px;background:#ffffff08}
+.time-number{display:block;color:var(--gold);font-size:1.35rem;font-weight:800;line-height:1.4;font-variant-numeric:tabular-nums}
+.time-unit{display:block;color:#aab6c8;font-size:.62rem;text-transform:uppercase;letter-spacing:.08em}
+.invite-open{width:100%;max-width:310px;border:0;border-radius:999px;padding:16px 20px;background:linear-gradient(135deg,#f5d992,#dcae50);color:#172033;font-size:.83rem;font-weight:900;letter-spacing:.06em;cursor:pointer;box-shadow:0 8px 28px #e7b95730}
+.invite-open:hover{filter:brightness(1.07);transform:translateY(-1px)}
+.invite-share{display:block;margin:14px auto 0;border:1px solid #ffffff30;background:#ffffff08;color:#f4f7fb;border-radius:999px;padding:11px 18px;font-size:.85rem;font-weight:700;cursor:pointer}
+.invite-foot{color:#9eabc1;font-size:.72rem;margin-top:15px}
+#confettiLayer{position:fixed;inset:0;z-index:10000;pointer-events:none;overflow:hidden}
+.confetti-piece{position:absolute;top:-15px;width:7px;height:12px;background:var(--gold);animation:fall 2.8s ease-in forwards}
+@keyframes fall{to{transform:translateY(110vh) rotate(720deg);opacity:0}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.confetti-piece{animation:none;display:none}}
 @media(max-width:760px){
 .nav{align-items:flex-start}
 .nav-links a{margin-left:10px;font-size:.82rem}
@@ -65,17 +120,41 @@ a{color:inherit}
 .gift{align-items:flex-start;flex-direction:column;padding:26px}
 .section{padding:36px 0}
 .card,.form-card,.privacy-card{padding:21px}
+.invite-card{padding:30px 20px}
+.time-box{min-width:53px}
 }
 </style>
 </head>
 <body>
 
+<!-- NEW: This cover opens first. Your original page is underneath it. -->
+<section class="invite-cover" id="inviteCover" aria-label="Birthday invitation">
+  <div class="invite-card">
+    <div class="invite-kicker">A special invitation</div>
+    <div class="invite-cake" aria-hidden="true">🎂</div>
+    <h2>Cyprian's <span>Birthday</span> Celebration</h2>
+    <div class="invite-date">19 OCTOBER</div>
+    <div class="invite-rule"></div>
+    <p class="invite-copy">A new chapter, a grateful heart. I'd love for you to be part of my special day. Open my birthday page, read my message, and leave me a wish.</p>
+
+    <div class="countdown-label" id="countdownLabel">Counting down to my birthday</div>
+    <div class="countdown" id="countdown" aria-live="polite">
+      <div class="time-box"><span class="time-number" id="days">--</span><span class="time-unit">Days</span></div>
+      <div class="time-box"><span class="time-number" id="hours">--</span><span class="time-unit">Hours</span></div>
+      <div class="time-box"><span class="time-number" id="minutes">--</span><span class="time-unit">Minutes</span></div>
+      <div class="time-box"><span class="time-number" id="seconds">--</span><span class="time-unit">Seconds</span></div>
+    </div>
+
+    <button class="invite-open" id="openInvitation" type="button">OPEN MY BIRTHDAY CELEBRATION ✨</button>
+    <button class="invite-share" id="shareInvitation" type="button">↗ Share Invitation on WhatsApp</button>
+    <div class="invite-foot">With gratitude and love · Cyprian</div>
+  </div>
+</section>
+<div id="confettiLayer" aria-hidden="true"></div>
+
 <header class="wrap nav">
   <a class="brand" href="#" style="text-decoration:none">CYP<span>RIAN</span><span class="spark">.</span></a>
-  <nav class="nav-links">
-    <a href="#story">My Story</a>
-    <a href="#wishes">Birthday Wishes</a>
-  </nav>
+  <nav class="nav-links"><a href="#story">My Story</a><a href="#wishes">Birthday Wishes</a></nav>
 </header>
 
 <main>
@@ -93,11 +172,7 @@ a{color:inherit}
 </section>
 
 <section id="story" class="wrap section">
-  <div class="section-head">
-    <div class="eyebrow">A note to myself</div>
-    <h2>Growing with gratitude.</h2>
-    <p>A little reminder of where I've been, what I've learned, and where I'm going.</p>
-  </div>
+  <div class="section-head"><div class="eyebrow">A note to myself</div><h2>Growing with gratitude.</h2><p>A little reminder of where I've been, what I've learned, and where I'm going.</p></div>
   <div class="story-grid">
     <article class="card">
       <p>Today, I celebrate the gift of life and the journey that continues to shape me. I'm grateful to God for bringing me this far, for the lessons in difficult seasons, the people who have encouraged me, and the opportunities still ahead.</p>
@@ -110,88 +185,108 @@ a{color:inherit}
 
 <section id="gift" class="wrap section">
   <div class="gift">
-    <div>
-      <div class="eyebrow">A little kindness</div>
-      <h2>Want to make my day special?</h2>
-      <p>Your wishes and kindness mean a lot. If you'd like to send a birthday gift, you're welcome to use my M-Pesa payment page. Every gift is optional and appreciated.</p>
-    </div>
+    <div><div class="eyebrow">A little kindness</div><h2>Want to make my day special?</h2><p>Your wishes and kindness mean a lot. If you'd like to send a birthday gift, you're welcome to use my M-Pesa payment page. Every gift is optional and appreciated.</p></div>
     <a class="btn btn-primary" href="https://cyprian.courtneytech.space" target="_blank" rel="noopener noreferrer">🎁 Send a Gift (STK Push) ↗</a>
   </div>
 </section>
 
 <section id="wishes" class="wrap section">
-  <div class="section-head">
-    <div class="eyebrow">A message to keep</div>
-    <h2>Leave me a birthday wish.</h2>
-    <p>Write a message and include your name. I'd love to know who sent it.</p>
-  </div>
-
+  <div class="section-head"><div class="eyebrow">A message to keep</div><h2>Leave me a birthday wish.</h2><p>Write a message and include your name. I'd love to know who sent it.</p></div>
   <div class="guestbook">
     <form class="form-card" id="wishForm" action="https://formspree.io/f/xoejypaw" method="POST">
       <input type="hidden" name="_subject" value="New birthday wish for Cyprian">
-
       <label for="sender">Your name</label>
       <input id="sender" name="name" placeholder="e.g. Alex" maxlength="80" required>
-
       <label for="message">Your message</label>
       <textarea id="message" name="message" placeholder="Write your birthday wish for Cyprian..." maxlength="1500" required></textarea>
-
       <button class="btn btn-primary" id="submitWish" type="submit">💌 Send Birthday Wish</button>
       <div class="status" id="formStatus" role="status" aria-live="polite"></div>
-      <p class="notice">Your message is sent privately to Cyprian through the configured message service and is not displayed publicly.</p>
+      <p class="notice">Your message is sent privately through the configured message service and is not displayed publicly.</p>
     </form>
-
     <aside class="privacy-card">
       <div class="privacy-icon">🔒</div>
       <h3>Your words are just for me.</h3>
       <p>Your birthday wish is submitted privately. Other visitors' messages are not displayed on this page.</p>
-      <ul>
-        <li>No visitor account required</li>
-        <li>Name and message fields only</li>
-        <li>Messages are not shown publicly</li>
-      </ul>
+      <ul><li>No visitor account required</li><li>Name and message fields only</li><li>Messages are not shown publicly</li></ul>
     </aside>
   </div>
 </section>
 </main>
 
-<footer class="wrap footer">
-  <div>Made with <span class="spark">♥</span> for <strong>Cyprian</strong></div>
-  <div>19 October 2005 · A new chapter, a grateful heart.</div>
-</footer>
+<footer class="wrap footer"><div>Made with <span class="spark">♥</span> for <strong>Cyprian</strong></div><div>19 October 2005 · A new chapter, a grateful heart.</div></footer>
 
 <script>
+/* Birthday countdown uses Kenya local time (UTC+3). */
+function updateCountdown(){
+  const target = new Date('2026-10-19T00:00:00+03:00').getTime();
+  const now = Date.now();
+  const remaining = target - now;
+  if(remaining <= 0){
+    document.getElementById('countdownLabel').textContent = "It's my birthday! Let's celebrate 🎉";
+    document.getElementById('countdown').innerHTML =
+      '<div class="time-box"><span class="time-number">🎉</span><span class="time-unit">Celebrate</span></div><div class="time-box"><span class="time-number">🎂</span><span class="time-unit">Today</span></div>';
+    return;
+  }
+  document.getElementById('days').textContent = Math.floor(remaining / 86400000);
+  document.getElementById('hours').textContent = Math.floor((remaining % 86400000) / 3600000);
+  document.getElementById('minutes').textContent = Math.floor((remaining % 3600000) / 60000);
+  document.getElementById('seconds').textContent = Math.floor((remaining % 60000) / 1000);
+}
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+/* Open cover and show a short burst of confetti. */
+document.getElementById('openInvitation').addEventListener('click', function(){
+  document.getElementById('inviteCover').style.display = 'none';
+  const layer = document.getElementById('confettiLayer');
+  for(let i=0;i<65;i++){
+    const piece = document.createElement('span');
+    piece.className = 'confetti-piece';
+    piece.style.left = Math.random()*100 + '%';
+    piece.style.animationDelay = Math.random()*0.7 + 's';
+    piece.style.animationDuration = (2 + Math.random()*1.5) + 's';
+    piece.style.background = ['#e7b957','#8fb8ff','#f4f7fb','#8ee0bd'][i%4];
+    layer.appendChild(piece);
+  }
+  setTimeout(function(){layer.innerHTML='';}, 4500);
+});
+
+/* Share the invitation in WhatsApp. */
+document.getElementById('shareInvitation').addEventListener('click', function(){
+  const url = 'https://cypuu8439.github.io/CYPRIAN-BIRTHDAY-/';
+  const text = "🎂✨ You're invited to Cyprian's Birthday Celebration on 19 October! Open my birthday page and leave me a wish: " + url;
+  window.open('https://wa.me/?text=' + encodeURIComponent(text), '_blank', 'noopener');
+});
+
+/* Send birthday wishes to Formspree. */
 const wishForm = document.getElementById('wishForm');
 const formStatus = document.getElementById('formStatus');
 const submitWish = document.getElementById('submitWish');
 
-wishForm.addEventListener('submit', async function(event) {
+wishForm.addEventListener('submit', async function(event){
   event.preventDefault();
-
   formStatus.style.display = 'block';
   formStatus.textContent = 'Sending your birthday wish...';
   submitWish.disabled = true;
 
-  try {
+  try{
     const response = await fetch(wishForm.action, {
       method: 'POST',
       body: new FormData(wishForm),
-      headers: { 'Accept': 'application/json' }
+      headers: {'Accept':'application/json'}
     });
-
-    if (response.ok) {
+    if(response.ok){
       formStatus.textContent = 'Thank you! Your birthday wish has been sent to Cyprian. ❤️';
       wishForm.reset();
-    } else {
-      formStatus.textContent = 'Your message could not be sent. Please try again or contact Cyprian directly.';
+    }else{
+      formStatus.textContent = 'Your message could not be sent. Please try again.';
     }
-  } catch (error) {
-    formStatus.textContent = 'Unable to send right now. Please check your internet connection and try again.';
-  } finally {
+  }catch(error){
+    formStatus.textContent = 'Unable to send right now. Check your internet connection and try again.';
+  }finally{
     submitWish.disabled = false;
   }
 });
 </script>
-
 </body>
 </html>
