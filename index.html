@@ -3,278 +3,243 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#390d27">
-<title>Happy Birthday, Cyprian!</title>
-
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#250615">
+<title>Happy Birthday, Cyprian Kipchumba</title>
 <style>
+:root{--bg:#190512;--panel:#300b20;--gold:#ffd477;--pink:#e84b80;--text:#fff1f6;--muted:#e5bdce;--green:#b8ffd5}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{
-  margin:0;
-  font-family:Arial,Helvetica,sans-serif;
-  color:#fff4f8;
-  background:#210817;
-}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,sans-serif;line-height:1.65}
 body.cover-open{overflow:hidden}
 button,input,textarea{font:inherit}
+button,a{touch-action:manipulation}
 button{cursor:pointer}
-.hidden{display:none!important}
-
-.cover{
-  position:fixed;
-  inset:0;
-  z-index:9999;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:20px;
-  overflow-y:auto;
-  background:linear-gradient(145deg,#170612,#641238,#39113f,#170916);
-  opacity:1;
-  visibility:visible;
-  transition:opacity .4s,visibility .4s;
-}
-.cover.closed{
-  opacity:0;
-  visibility:hidden;
-  pointer-events:none;
-}
-.cover-card{
-  width:100%;
-  max-width:520px;
-  padding:32px 22px;
-  text-align:center;
-  border:1px solid #e9b85b;
-  border-radius:26px;
-  background:rgba(35,5,25,.78);
-  box-shadow:0 0 40px #d72e7833;
-}
-.eyebrow{
-  color:#ffd77b;
-  letter-spacing:3px;
-  text-transform:uppercase;
-  font-size:12px;
-}
-h1,h2{font-family:Georgia,'Times New Roman',serif}
-.cover h1{
-  color:#ffd77b;
-  font-size:clamp(38px,10vw,64px);
-  margin:18px 0;
-}
-.cake{font-size:75px;margin:18px 0}
-.cover p{line-height:1.7;color:#ffe5ee}
-.btn{
-  border:0;
-  border-radius:30px;
-  padding:14px 23px;
-  font-weight:bold;
-  display:inline-block;
-  text-decoration:none;
-  margin:8px 4px;
-}
-.primary{
-  color:#390d27;
-  background:linear-gradient(135deg,#ffe7a1,#e7ad48);
-  box-shadow:0 5px 20px #0004;
-}
-.secondary{
-  color:#ffe4ef;
-  background:#742047;
-  border:1px solid #d98cae;
-}
-main{max-width:900px;margin:auto;padding:18px}
-.hero,.section{
-  margin:18px 0;
-  padding:26px 20px;
-  border:1px solid #8f3b61;
-  border-radius:22px;
-  background:linear-gradient(145deg,#45102e,#291027);
-  box-shadow:0 10px 30px #0003;
-}
-.hero{text-align:center;padding-top:38px;padding-bottom:38px}
-.hero h1{font-size:clamp(35px,8vw,56px);color:#ffd77b}
-.gold{color:#ffd77b}
-.scripture{
-  padding:16px;
-  border-left:3px solid #ffd77b;
-  background:#ffffff0a;
-  line-height:1.8;
-  border-radius:8px;
-}
-.clock{
-  font-size:18px;
-  font-weight:bold;
-  color:#ffd77b;
-  margin-top:14px;
-}
-.section h2{color:#ffd77b;font-size:28px}
-.section p,.section li{line-height:1.8;color:#ffe7ef}
-input,textarea{
-  display:block;
-  width:100%;
-  padding:13px;
-  margin:10px 0;
-  border-radius:10px;
-  border:1px solid #b45d83;
-  background:#210817;
-  color:white;
-}
-textarea{min-height:120px;resize:vertical}
-footer{text-align:center;padding:28px;color:#e8b4cb}
-a{color:#ffd77b}
+a{color:var(--gold)}
+.cover{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;padding:18px;overflow:auto;background:radial-gradient(circle at 50% 15%,#7a1945 0,#380b28 45%,#10030f 100%);transition:opacity .45s,visibility .45s}
+.cover.closed{opacity:0;visibility:hidden;pointer-events:none}
+.cover-card{width:100%;max-width:550px;text-align:center;padding:30px 22px;border:1px solid var(--gold);border-radius:25px;background:#210516eF;box-shadow:0 0 45px #f4488140}
+.kicker{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold)}
+.cover h1{font:clamp(42px,10vw,68px)/1.05 Georgia,serif;color:var(--gold);margin:16px 0}
+.cake{font-size:76px;margin:16px}
+.cover p{color:#ffe2ee}
+.btn{display:inline-block;padding:13px 20px;margin:5px 3px;border:0;border-radius:10px;text-decoration:none;font-weight:bold}
+.gold-btn{background:linear-gradient(120deg,#ffe6a0,#d99a2d);color:#32101c}
+.pink-btn{background:linear-gradient(120deg,#f36a96,#a91e50);color:white}
+.dark-btn{border:1px solid var(--gold);background:#210817;color:var(--gold)}
+main{max-width:950px;margin:auto;padding:14px}
+.hero,.section{margin:15px 0;padding:24px 19px;border:1px solid #813253;border-radius:19px;background:linear-gradient(145deg,#3c102b,#200b20);box-shadow:0 9px 25px #0003}
+.hero{text-align:center;padding:35px 18px}
+h1,h2{font-family:Georgia,serif}
+.hero h1{font-size:clamp(36px,8vw,57px);line-height:1.1;color:var(--gold)}
+h2{color:var(--gold);font-size:27px;margin-top:0}
+.gold{color:var(--gold)}
+.muted{color:var(--muted)}
+.clock{padding:13px;border-radius:10px;background:#16050f;margin:15px auto;max-width:390px;color:var(--gold)}
+.player{padding:15px;background:#190512;border:1px solid #7c3153;border-radius:13px;max-width:500px;margin:20px auto}
+.player button{min-width:110px}
+audio{width:100%;margin-top:8px}
+.gift{border-color:#b18a30;background:linear-gradient(120deg,#182217,#2d1c15,#160812)}
+.gift-grid{display:grid;grid-template-columns:1fr;gap:12px;align-items:center}
+.gift-icon{font-size:62px;text-align:center}
+.gift-link{display:block;text-align:center;padding:16px 12px;background:linear-gradient(120deg,#ffe6a0,#d99a2d);color:#291018;border-radius:12px;font-weight:bold;text-decoration:none}
+input,textarea{display:block;width:100%;padding:13px;margin:10px 0;border:1px solid #a64a70;border-radius:9px;background:#190512;color:white}
+input::placeholder,textarea::placeholder{color:#d8b4c6}
+textarea{min-height:115px;resize:vertical}
+#wishStatus{display:none;padding:13px;border-radius:10px;font-weight:bold;line-height:1.5}
+#wishStatus.success{display:block;background:#d1fae5;color:#065f46}
+#wishStatus.error{display:block;background:#fee2e2;color:#991b1b}
+#wishStatus.pending{display:block;background:#fff0d6;color:#7a4500}
+#sendWish:disabled{opacity:.65;cursor:wait}
+.scripture{padding:16px;border-left:3px solid var(--gold);background:#ffffff08;border-radius:8px}
+footer{text-align:center;padding:25px 10px;color:var(--muted)}
+@media(min-width:650px){.gift-grid{grid-template-columns:.6fr 1.5fr 1fr}.gift-icon{font-size:78px}}
 </style>
 </head>
-
 <body class="cover-open">
 
+<!-- OPENING COVER -->
 <div class="cover" id="cover">
   <div class="cover-card">
-    <div class="eyebrow">A special day • 19 October</div>
-    <div class="cake">🎂</div>
-    <h1>Happy Birthday,<br>Cyprian!</h1>
-    <p>A new year of life, hope, blessings and beautiful memories awaits.</p>
-    <button
-      class="btn primary"
-      id="enterBtn"
-      type="button"
-      onclick="openBirthdayCelebration()">
-      Open the celebration ✨
-    </button>
-    <p><small>Made with love to celebrate you 💛</small></p>
+    <div style="font-size:40px">💖</div>
+    <div class="kicker">A little invitation from the heart</div>
+    <h1>Celebrate<br>with Cyprian</h1>
+    <div class="cake">🎂🎈✨</div>
+    <p>A new chapter, a grateful heart, and another year of life to cherish.</p>
+    <p class="kicker">19 October • Birthday celebration</p>
+    <button class="btn gold-btn" type="button" onclick="openCelebration()">🎁 Open the celebration ✨</button>
+    <p><small>Made with love, faith and gratitude 💛</small></p>
   </div>
 </div>
 
 <main id="birthdayContent">
-  <section class="hero">
-    <div class="eyebrow">Today is a celebration of you</div>
-    <h1>Happy Birthday, Cyprian! 🎉</h1>
-    <div class="cake">🎂 🥳 🎁</div>
-    <p>May your new year bring you peace, wisdom, success and countless reasons to smile.</p>
-    <div class="clock" id="kenyaClock">Kenya time: loading...</div>
-    <p class="gold">19 October • Your special day</p>
-    <button class="btn secondary" type="button" onclick="toggleMusic()">🎵 Play / Pause Music</button>
-    <audio id="birthdayMusic" loop>
-      <source src="https://cdn.pixabay.com/audio/2022/10/25/audio_946b7a2c31.mp3" type="audio/mpeg">
-    </audio>
-  </section>
 
-  <section class="section">
-    <h2>A promise of hope 🙏</h2>
-    <div class="scripture">
-      “For I know the plans I have for you,” declares the Lord,
-      “plans to prosper you and not to harm you, plans to give you hope and a future.”
-      <br><strong class="gold">— Jeremiah 29:11</strong>
+  <!-- BIRTHDAY INTRO -->
+  <section class="hero" id="home">
+    <div class="kicker">Celebrating life, growth and purpose</div>
+    <h1>It's my birthday! 🎉</h1>
+    <p>I'm Cyprian. Born on 19 October 2005, grateful for every lesson, every blessing, and every person who has been part of my journey.</p>
+    <p>May this new chapter bring wisdom, peace, good health, courage and beautiful opportunities.</p>
+    <a class="btn pink-btn" href="#birthday-wishes">💌 Leave a wish</a>
+    <a class="btn dark-btn" href="#gift">🎁 Send a gift</a>
+
+    <div class="clock">
+      <div id="kenyaClock">Kenya time: loading...</div>
+      <div id="kenyaDate"></div>
     </div>
-    <p>May God guide your steps, strengthen you through challenges and bless the work of your hands.</p>
+
+    <!-- MUSIC: tap play to start -->
+    <div class="player">
+      <div class="kicker">🎵 Birthday music</div>
+      <p id="musicMessage">Tap play to start the music.</p>
+      <audio id="birthdayMusic" controls loop preload="none">
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+        Your browser does not support audio.
+      </audio>
+      <button class="btn gold-btn" id="musicButton" type="button" onclick="toggleMusic()">▶ Play birthday music</button>
+    </div>
   </section>
 
-  <section class="section">
-    <h2>My story, my journey ✨</h2>
-    <p>Every birthday is a reminder that life is a journey of growth. Every challenge teaches a lesson, every achievement deserves gratitude, and every new day brings another opportunity to become better.</p>
-    <p>May this next chapter be filled with courage, kindness, learning, meaningful friendships and dreams becoming reality.</p>
+  <!-- GIFT SECTION COMES BEFORE WISHES -->
+  <section class="section gift" id="gift">
+    <div class="gift-grid">
+      <div class="gift-icon">🎁💛</div>
+      <div>
+        <div class="kicker">A little kindness</div>
+        <h2>Send a little birthday love 💚</h2>
+        <p>Your wishes mean a lot. If you would like to send a birthday gift, you can use my M-PESA payment page.</p>
+        <p class="muted">Every gift is appreciated. Thank you for being part of my day.</p>
+      </div>
+      <div>
+        <a class="gift-link" href="https://cyprian.courtneytech.space" target="_blank" rel="noopener">🎁 SEND A BIRTHDAY GIFT<br>M-PESA STK PUSH ↗</a>
+        <p style="text-align:center;font-size:12px">You will open the secure payment page.</p>
+      </div>
+    </div>
   </section>
 
-  <section class="section">
-    <h2>Birthday wishes 💌</h2>
-    <p>Leave a birthday message below. It will be sent privately through the configured form service.</p>
+  <!-- WISHES FORM: STAYS ON THIS PAGE -->
+  <section class="section" id="birthday-wishes">
+    <div class="kicker">A message to keep</div>
+    <h2>Leave me a birthday wish 💌</h2>
+    <p>Write a message and include your name. I'd love to know who sent it.</p>
 
-    <form action="https://formspree.io/f/xoejypaw" method="POST">
-      <input type="text" name="name" placeholder="Your name" required>
-      <textarea name="message" placeholder="Write your birthday wish..." required></textarea>
+    <form id="wishForm">
+      <input type="text" name="name" placeholder="Your name" maxlength="100" required>
+      <textarea name="message" placeholder="Write your birthday wish for Cyprian..." maxlength="3000" required></textarea>
       <input type="hidden" name="_subject" value="A private birthday wish for Cyprian">
-      <button class="btn primary" type="submit">Send Birthday Wish 💌</button>
+      <button class="btn pink-btn" id="sendWish" type="submit">💌 Send birthday wish</button>
+      <p id="wishStatus" role="status" aria-live="polite"></p>
     </form>
-    <p><small>Messages are submitted privately and are not displayed publicly on this page.</small></p>
+    <p class="muted"><small>💗 Messages are not displayed publicly on this website.</small></p>
   </section>
 
-  <section class="section" style="text-align:center">
-    <h2>Send a birthday gift 🎁</h2>
-    <p>Your thoughtfulness is appreciated. Tap below to open the M-PESA gift page.</p>
-    <a class="btn primary" href="https://cyprian.courtneytech.space" target="_blank" rel="noopener">
-      🎁 Give a Gift via M-PESA
-    </a>
+  <!-- SCRIPTURE -->
+  <section class="section" id="scripture">
+    <div class="kicker">God's word for my new chapter</div>
+    <h2>A blessing for my life 🙏</h2>
+    <div class="scripture">
+      “For I know the plans I have for you,” declares the LORD, “plans to prosper you and not to harm you, plans to give you hope and a future.”
+      <p class="gold"><strong>Jeremiah 29:11 — NIV</strong></p>
+    </div>
+    <p>Lord, thank You for the gift of life and for carrying me this far. As I begin another year, guide my steps, strengthen my faith, bless my family, and help me walk in wisdom, purpose, peace, and love. Amen.</p>
   </section>
 
-  <section class="section" style="text-align:center">
-    <h2>Share the celebration 💖</h2>
-    <button class="btn secondary" type="button" onclick="shareBirthday()">Share Birthday Website</button>
+  <!-- PERSONAL REFLECTION -->
+  <section class="section" id="story">
+    <div class="kicker">A note to myself</div>
+    <h2>Growing with gratitude ✨</h2>
+    <p>Today, I celebrate the gift of life and the journey that continues to shape me. I'm grateful to God for bringing me this far, for the lessons in difficult seasons, the people who have encouraged me, and the opportunities still ahead.</p>
+    <p>As I step into a new chapter, I choose courage over fear, progress over perfection, and faith over doubt.</p>
+    <p>May this year bring wisdom, good health, peace, purpose, and the strength to keep moving forward. The story is still being written.</p>
+    <p class="gold">With gratitude, — Cyprian 💛</p>
   </section>
 
-  <footer>Made with ❤️ for Cyprian Kipchumba</footer>
+  <footer>
+    Made with ❤️, faith and gratitude.<br>
+    © <span id="year"></span> Cyprian Kipchumba • All rights reserved
+    <p><a href="#home">↑ Back to top</a></p>
+  </footer>
 </main>
 
 <script>
-function openBirthdayCelebration(){
-  var cover = document.getElementById('cover');
-  var body = document.body;
-
-  if (cover) {
-    cover.classList.add('closed');
-    cover.setAttribute('aria-hidden','true');
-  }
-
-  body.classList.remove('cover-open');
-  body.style.overflow = 'auto';
-
+function openCelebration(){
+  const cover = document.getElementById('cover');
+  cover.classList.add('closed');
+  cover.setAttribute('aria-hidden','true');
+  document.body.classList.remove('cover-open');
+  document.body.style.overflow='auto';
   window.scrollTo(0,0);
 }
 
-document.addEventListener('DOMContentLoaded', function(){
-  var cover = document.getElementById('cover');
-  var button = document.getElementById('enterBtn');
-
-  if (cover && button) {
-    button.addEventListener('click', openBirthdayCelebration);
-  }
-
-  updateKenyaClock();
-  setInterval(updateKenyaClock, 1000);
-});
-
-function updateKenyaClock(){
-  var clock = document.getElementById('kenyaClock');
-  if (!clock) return;
-
-  clock.textContent = 'Kenya time: ' +
-    new Date().toLocaleString('en-KE', {
+function updateKenyaTime(){
+  const now = new Date();
+  document.getElementById('kenyaClock').textContent =
+    'Kenya time: ' + now.toLocaleTimeString('en-KE',{timeZone:'Africa/Nairobi'});
+  document.getElementById('kenyaDate').textContent =
+    now.toLocaleDateString('en-KE',{
       timeZone:'Africa/Nairobi',
-      dateStyle:'medium',
-      timeStyle:'medium'
+      weekday:'long',year:'numeric',month:'long',day:'numeric'
     });
 }
+updateKenyaTime();
+setInterval(updateKenyaTime,1000);
+document.getElementById('year').textContent = new Date().getFullYear();
 
-function toggleMusic(){
-  var music = document.getElementById('birthdayMusic');
-  if (!music) return;
+async function toggleMusic(){
+  const audio = document.getElementById('birthdayMusic');
+  const button = document.getElementById('musicButton');
+  const message = document.getElementById('musicMessage');
 
-  if (music.paused) {
-    music.play().catch(function(){
-      alert('Tap Play / Pause Music again to allow playback.');
-    });
-  } else {
-    music.pause();
+  if(audio.paused){
+    message.textContent = 'Loading music... 🎶';
+    try{
+      await audio.play();
+      button.textContent = '⏸ Pause birthday music';
+      message.textContent = 'Music is playing! Enjoy the celebration 🎉';
+    }catch(error){
+      message.textContent = 'Music could not load. Check your connection or use the audio player above.';
+    }
+  }else{
+    audio.pause();
+    button.textContent = '▶ Play birthday music';
+    message.textContent = 'Music paused.';
   }
 }
 
-function shareBirthday(){
-  var shareData = {
-    title:'Happy Birthday, Cyprian!',
-    text:'Join me in celebrating Cyprian!',
-    url:window.location.href
-  };
+const wishForm = document.getElementById('wishForm');
+wishForm.addEventListener('submit',async function(event){
+  event.preventDefault();
 
-  if (navigator.share) {
-    navigator.share(shareData).catch(function(){});
-  } else if (navigator.clipboard && navigator.clipboard.writeText) {
-    navigator.clipboard.writeText(window.location.href)
-      .then(function(){alert('Website link copied!');})
-      .catch(function(){prompt('Copy this website link:',window.location.href);});
-  } else {
-    prompt('Copy this website link:',window.location.href);
+  const status = document.getElementById('wishStatus');
+  const button = document.getElementById('sendWish');
+
+  status.className = 'pending';
+  status.textContent = 'Sending your birthday wish...';
+  button.disabled = true;
+  button.textContent = 'Sending...';
+
+  try{
+    const response = await fetch('https://formspree.io/f/xoejypaw',{
+      method:'POST',
+      body:new FormData(wishForm),
+      headers:{'Accept':'application/json'}
+    });
+
+    if(!response.ok){
+      throw new Error('Submission failed');
+    }
+
+    status.className = 'success';
+    status.textContent = '✓ Submitted successfully! Thank you for your birthday wish 💚';
+    wishForm.reset();
+  }catch(error){
+    status.className = 'error';
+    status.textContent = 'Your wish could not be sent. Please check your internet connection and try again.';
+  }finally{
+    button.disabled = false;
+    button.textContent = '💌 Send birthday wish';
   }
-}
+});
 </script>
-
 </body>
 </html>
