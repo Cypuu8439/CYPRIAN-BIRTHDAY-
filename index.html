@@ -1,663 +1,280 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#390d25">
-<meta name="description" content="Celebrate Cyprian's birthday with love, faith, blessings and gratitude.">
-<title>Cyprian | Birthday Celebration</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#390d27">
+<title>Happy Birthday, Cyprian!</title>
 
 <style>
-:root {
-  --bg:#170916;
-  --panel:#2d1427;
-  --pink:#ff8fb8;
-  --gold:#ffdc91;
-  --white:#fff8fc;
-  --muted:#e8cbd9;
-  --green:#14583d;
-}
-* {box-sizing:border-box}
-html {scroll-behavior:smooth;scroll-padding-top:20px}
-body {
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
   margin:0;
-  color:var(--white);
-  background:#170916;
   font-family:Arial,Helvetica,sans-serif;
-  line-height:1.65;
+  color:#fff4f8;
+  background:#210817;
 }
-body.cover-open {overflow:hidden}
-.wrap {width:min(1000px,92%);margin:auto}
-button,a {-webkit-tap-highlight-color:transparent}
-button {font:inherit;cursor:pointer}
-a {color:inherit}
-button:disabled {opacity:.65;cursor:wait}
+body.cover-open{overflow:hidden}
+button,input,textarea{font:inherit}
+button{cursor:pointer}
+.hidden{display:none!important}
 
-/* DEEP, RICH BIRTHDAY COVER */
-.cover {
+.cover{
   position:fixed;
   inset:0;
-  z-index:100;
-  display:grid;
-  place-items:center;
-  padding:18px;
-  overflow:auto;
-  background:linear-gradient(145deg,#260819 0%,#641333 42%,#39113f 72%,#170916 100%);
-  transition:opacity .55s,visibility .55s;
+  z-index:9999;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  overflow-y:auto;
+  background:linear-gradient(145deg,#170612,#641238,#39113f,#170916);
+  opacity:1;
+  visibility:visible;
+  transition:opacity .4s,visibility .4s;
 }
-.cover.hidden {
+.cover.closed{
   opacity:0;
   visibility:hidden;
   pointer-events:none;
 }
-.cover-card {
-  width:min(500px,100%);
-  text-align:center;
-  padding:clamp(25px,6vw,42px) 23px;
-  border:1px solid #ffdbab88;
-  border-radius:25px;
-  background:linear-gradient(145deg,#651b3d,#40132f 55%,#29102f);
-  box-shadow:0 20px 65px #08010899,0 0 28px #e85a8c1c;
-}
-.heart {
-  font-size:48px;
-  line-height:1.3;
-  animation:pulse 1.8s infinite;
-}
-.eyebrow {
-  color:var(--gold);
-  font-size:12px;
-  font-weight:bold;
-  letter-spacing:2.5px;
-  text-transform:uppercase;
-}
-.cover .eyebrow {color:#ffe3a9}
-.cover h1 {
-  font-family:Georgia,serif;
-  font-size:clamp(42px,10vw,65px);
-  font-weight:normal;
-  line-height:1.06;
-  margin:17px 0;
-  color:#fff8fc;
-  text-shadow:0 3px 16px #15000a88;
-}
-.cover h1 span {
-  display:block;
-  color:#ffdc91;
-  font-style:italic;
-}
-.cover p {color:#ffedf5}
-.cover-date {
-  color:#ffe4ad;
-  font-size:12px;
-  letter-spacing:2px;
-  margin:20px 0;
-}
-.btn {
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:7px;
-  text-align:center;
-  text-decoration:none;
-  border:0;
-  border-radius:12px;
-  padding:13px 18px;
-  min-height:49px;
-  font-weight:bold;
-  transition:transform .2s,filter .2s;
-}
-.btn:hover {transform:translateY(-2px);filter:brightness(1.08)}
-.primary {
-  background:linear-gradient(120deg,#ffe8ae,#f5c96d);
-  color:#40152c;
-  box-shadow:0 6px 20px #0003;
-}
-.secondary {
-  background:#ffffff0c;
-  border:1px solid #ffb8d477;
-  color:white;
-}
-.cover .btn {width:100%;margin:5px 0}
-.cover .primary {
-  background:linear-gradient(120deg,#ffe8ae,#f5c96d);
-  color:#40152c;
-}
-.cover .secondary {background:#ffffff0a}
-
-/* MAIN NAVIGATION */
-header {
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:15px;
-  flex-wrap:wrap;
-  padding:22px 0;
-}
-.brand {
-  font-weight:900;
-  letter-spacing:3px;
-  text-decoration:none;
-}
-.brand span {color:var(--pink)}
-nav {display:flex;gap:13px;flex-wrap:wrap}
-nav a {
-  color:var(--muted);
-  text-decoration:none;
-  font-size:13px;
-}
-nav a:hover {color:var(--gold)}
-
-/* HERO */
-.hero {
-  display:grid;
-  grid-template-columns:1.2fr .8fr;
-  gap:30px;
-  align-items:center;
-  padding:45px 0;
-}
-.pill {
-  display:inline-block;
-  border:1px solid #ff8fb866;
-  border-radius:30px;
-  padding:7px 13px;
-  color:#ffd9e8;
-  font-size:13px;
-}
-.hero h2 {
-  font:normal clamp(49px,9vw,88px)/.98 Georgia,serif;
-  letter-spacing:-3px;
-  margin:20px 0;
-}
-.hero h2 span {
-  display:block;
-  color:var(--pink);
-  font-style:italic;
-}
-.lead {font-size:17px;color:var(--muted);max-width:550px}
-.actions {display:flex;gap:10px;flex-wrap:wrap;margin:22px 0}
-.art {min-height:320px;display:grid;place-items:center}
-.art-card {
-  width:min(330px,85vw);
-  min-height:320px;
-  border:1px solid #ffdc9188;
-  border-radius:150px 150px 25px 25px;
-  background:linear-gradient(155deg,#63203f,#35162f 65%,#251128);
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  padding:20px;
-  box-shadow:0 18px 40px #0004;
-}
-.art-card .big {font-size:85px;line-height:1.2}
-.art-card strong {font:normal 28px Georgia,serif;color:var(--gold)}
-.art-card p {color:var(--muted);margin-bottom:0}
-
-/* KENYA CLOCK */
-.clock-card {
-  margin-top:25px;
-  padding:20px;
-  text-align:center;
-  border:1px solid #ffdc9166;
-  border-radius:20px;
-  background:#2b1428;
-}
-.clock-label {
-  color:var(--gold);
-  font-size:12px;
-  letter-spacing:1.5px;
-  font-weight:bold;
-}
-.clock-time {
-  font:normal clamp(34px,8vw,49px) Georgia,serif;
-  color:#fff0f6;
-  margin:3px 0;
-  font-variant-numeric:tabular-nums;
-}
-.clock-date {color:var(--muted);font-size:14px}
-.clock-note {font-size:12px;color:var(--pink);margin-top:8px}
-
-/* MUSIC */
-.music {
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:15px;
-  flex-wrap:wrap;
-  padding:16px;
-  margin-top:18px;
-  border:1px solid #ffffff20;
-  border-radius:16px;
-  background:#ffffff08;
-}
-.music p {margin:3px 0;color:var(--muted);font-size:13px}
-
-/* CONTENT SECTIONS */
-section.content {padding:35px 0}
-.section-title {
-  font:normal clamp(32px,6vw,48px)/1.1 Georgia,serif;
-  margin:8px 0 15px;
-}
-.muted {color:var(--muted)}
-.panel {
-  background:linear-gradient(145deg,#351b30,#241323);
-  border:1px solid #ffffff17;
-  border-radius:20px;
-  padding:25px;
-}
-.panel p {color:#f0dce6}
-.signature {color:var(--gold)!important;font-weight:bold}
-
-/* SCRIPTURE */
-.scripture {
-  background:linear-gradient(145deg,#fff0e1,#f6cbdc 55%,#e6c9ef);
-  color:#51213b;
-  border:2px solid #ffdc91;
-  border-radius:23px;
-  padding:clamp(25px,5vw,42px);
-  box-shadow:0 15px 35px #0003;
-  text-align:center;
-}
-.scripture .eyebrow {color:#8a3457}
-.scripture blockquote {
-  font:italic clamp(21px,4.8vw,32px)/1.5 Georgia,serif;
-  margin:20px auto;
-  max-width:760px;
-}
-.scripture .verse {font-weight:bold;color:#805321;letter-spacing:1px}
-.prayer {color:#70485e;max-width:700px;margin:18px auto 0}
-
-/* BIRTHDAY CAKE */
-.cake-stage {
-  margin-top:20px;
-  padding:25px 14px 22px;
-  text-align:center;
-  overflow:hidden;
-  border:1px solid #ffdc9155;
-  border-radius:23px;
-  background:linear-gradient(145deg,#4c1b3d,#28122a 65%,#1c0e20);
-}
-.cake-stage h3 {
-  font:normal clamp(26px,6vw,36px) Georgia,serif;
-  margin:5px 0;
-  color:#ffe2ec;
-}
-.cake-stage .cake-subtitle {color:var(--muted);font-size:14px;margin:0 0 22px}
-.cake {
-  width:min(330px,88%);
-  margin:0 auto;
-  position:relative;
-  padding-top:52px;
-  filter:drop-shadow(0 12px 10px #0005);
-}
-.candles {
-  display:flex;
-  justify-content:center;
-  gap:17px;
-  height:68px;
-  align-items:flex-end;
-  position:relative;
-  z-index:3;
-}
-.candle {
-  width:13px;
-  height:53px;
-  border-radius:4px 4px 2px 2px;
-  position:relative;
-  background:repeating-linear-gradient(135deg,#fff0dc 0 7px,#e89ab7 7px 13px);
-}
-.flame {
-  position:absolute;
-  width:13px;
-  height:21px;
-  left:0;
-  top:-24px;
-  border-radius:50% 50% 45% 45%;
-  background:radial-gradient(ellipse at 50% 70%,#fffbd3 0 17%,#ffe47b 30%,#ff9c42 65%,#f65b3b 100%);
-  transform-origin:50% 90%;
-  animation:flicker .65s infinite alternate;
-  box-shadow:0 0 12px #ffb744,0 0 24px #ff8b3d88;
-}
-.candle:nth-child(2) .flame {animation-delay:-.2s}
-.candle:nth-child(3) .flame {animation-delay:-.4s}
-.candle:nth-child(4) .flame {animation-delay:-.1s}
-.candle:nth-child(5) .flame {animation-delay:-.3s}
-.cake-top {
-  height:35px;
-  border-radius:50%;
-  background:linear-gradient(180deg,#fff1e8,#f6bfd0 70%,#e99ab7);
-  border:2px solid #ffe4e7;
-  position:relative;
-  z-index:2;
-  margin-bottom:-14px;
-}
-.cake-top::after {
-  content:"";
-  position:absolute;
-  inset:7px 15px;
-  border-radius:50%;
-  border:2px dotted #d88c56;
-}
-.cake-body {
-  height:86px;
-  position:relative;
-  background:linear-gradient(90deg,#c85c8c,#ffe0e8 25%,#f8b4cd 60%,#b84e80);
-  border-radius:8px 8px 15px 15px;
-  border-bottom:8px solid #a94c78;
-  box-shadow:inset 0 -8px #ffffff2c;
-}
-.cake-body::before {
-  content:"";
-  position:absolute;
-  top:-5px;
-  left:0;
-  right:0;
-  height:20px;
-  background:#fff0e7;
-  border-radius:50% 50% 8px 8px;
-}
-.icing-drops {
-  position:absolute;
-  top:8px;
-  left:0;
-  right:0;
-  display:flex;
-  justify-content:space-around;
-  z-index:2;
-}
-.icing-drops i {
-  display:block;
-  width:13px;
-  height:22px;
-  border-radius:0 0 10px 10px;
-  background:#fff0e7;
-}
-.cake-bottom {
-  height:22px;
-  margin:0 -10px;
-  background:linear-gradient(#f2d39a,#c78a50);
-  border-radius:4px 4px 13px 13px;
-  box-shadow:0 7px 0 #8f5c42;
-}
-.cake-plate {
-  height:14px;
-  margin:9px -28px 0;
-  background:linear-gradient(#fff2df,#d8b8b0);
-  border-radius:50%;
-  box-shadow:0 7px 12px #0005;
-}
-.cake-message {font:italic 18px Georgia,serif;color:#ffe0a4;margin:24px 0 8px}
-.cake-actions {display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:15px}
-.cake-status {min-height:25px;color:#ffe2ec;font-size:14px;margin-top:12px}
-.cake-stage.blown .flame {display:none}
-.cake-stage.blown .candles {opacity:.8}
-
-/* GIFT */
-.gift {
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:20px;
-  flex-wrap:wrap;
-  background:linear-gradient(120deg,#104532,#17372d 55%,#30203a);
-  border:1px solid #ffdc91aa;
-  border-radius:23px;
-  padding:25px;
-  box-shadow:0 15px 35px #0003;
-}
-.gift-copy {flex:1;min-width:220px}
-.gift h2 {font:normal 32px Georgia,serif;margin:10px 0;color:#fff0f5}
-.gift-art {
-  width:100px;
-  height:90px;
-  flex:0 0 100px;
-  display:grid;
-  place-items:center;
-  font-size:68px;
-  filter:drop-shadow(0 7px 7px #0005);
-  animation:giftFloat 3s ease-in-out infinite;
-}
-.gift .gift-button {
-  background:linear-gradient(120deg,#ffe5a4,#f2c76b);
-  color:#26372c;
-  border:1px solid #fff0c5;
-}
-.gift-note {font-size:12px;color:#cfe4d8;margin-top:12px}
-
-/* WISH FORM */
-.form-grid {display:grid;grid-template-columns:1fr 1fr;gap:18px}
-label {display:block;font-weight:bold;margin:14px 0 7px}
-input,textarea {
+.cover-card{
   width:100%;
-  background:#190f19;
-  color:white;
-  border:1px solid #ffffff35;
-  border-radius:11px;
+  max-width:520px;
+  padding:32px 22px;
+  text-align:center;
+  border:1px solid #e9b85b;
+  border-radius:26px;
+  background:rgba(35,5,25,.78);
+  box-shadow:0 0 40px #d72e7833;
+}
+.eyebrow{
+  color:#ffd77b;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  font-size:12px;
+}
+h1,h2{font-family:Georgia,'Times New Roman',serif}
+.cover h1{
+  color:#ffd77b;
+  font-size:clamp(38px,10vw,64px);
+  margin:18px 0;
+}
+.cake{font-size:75px;margin:18px 0}
+.cover p{line-height:1.7;color:#ffe5ee}
+.btn{
+  border:0;
+  border-radius:30px;
+  padding:14px 23px;
+  font-weight:bold;
+  display:inline-block;
+  text-decoration:none;
+  margin:8px 4px;
+}
+.primary{
+  color:#390d27;
+  background:linear-gradient(135deg,#ffe7a1,#e7ad48);
+  box-shadow:0 5px 20px #0004;
+}
+.secondary{
+  color:#ffe4ef;
+  background:#742047;
+  border:1px solid #d98cae;
+}
+main{max-width:900px;margin:auto;padding:18px}
+.hero,.section{
+  margin:18px 0;
+  padding:26px 20px;
+  border:1px solid #8f3b61;
+  border-radius:22px;
+  background:linear-gradient(145deg,#45102e,#291027);
+  box-shadow:0 10px 30px #0003;
+}
+.hero{text-align:center;padding-top:38px;padding-bottom:38px}
+.hero h1{font-size:clamp(35px,8vw,56px);color:#ffd77b}
+.gold{color:#ffd77b}
+.scripture{
+  padding:16px;
+  border-left:3px solid #ffd77b;
+  background:#ffffff0a;
+  line-height:1.8;
+  border-radius:8px;
+}
+.clock{
+  font-size:18px;
+  font-weight:bold;
+  color:#ffd77b;
+  margin-top:14px;
+}
+.section h2{color:#ffd77b;font-size:28px}
+.section p,.section li{line-height:1.8;color:#ffe7ef}
+input,textarea{
+  display:block;
+  width:100%;
   padding:13px;
-  font:inherit;
+  margin:10px 0;
+  border-radius:10px;
+  border:1px solid #b45d83;
+  background:#210817;
+  color:white;
 }
-input:focus,textarea:focus {outline:2px solid #ff8fb8}
-textarea {min-height:130px;resize:vertical}
-form .btn {width:100%;margin-top:16px}
-.status {display:none;margin-top:14px;padding:12px;border-radius:10px}
-.status.success {display:block;background:#174d36;color:#d9ffe8}
-.status.error {display:block;background:#632238;color:#ffe1eb}
-
-footer {
-  border-top:1px solid #ffffff20;
-  margin-top:35px;
-  padding:25px 0;
-  color:var(--muted);
-  font-size:13px;
-  display:flex;
-  justify-content:space-between;
-  gap:10px;
-  flex-wrap:wrap;
-}
-#confetti {position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:150}
-.piece {position:absolute;top:-20px;width:9px;height:13px;animation:fall 3s linear forwards}
-@keyframes fall {to{transform:translateY(110vh) rotate(750deg);opacity:0}}
-@keyframes pulse {50%{transform:scale(1.1)}}
-@keyframes flicker {
-  0% {transform:rotate(-5deg) scale(.95,1)}
-  50% {transform:rotate(4deg) scale(1.06,.96)}
-  100% {transform:rotate(-2deg) scale(.96,1.08)}
-}
-@keyframes giftFloat {50%{transform:translateY(-5px) rotate(2deg)}}
-
-@media(max-width:700px) {
-  .hero {grid-template-columns:1fr;padding:30px 0}
-  .art {min-height:270px}
-  .form-grid {grid-template-columns:1fr}
-  nav {gap:10px}
-  .hero h2 {letter-spacing:-2px}
-  .gift-art {width:75px;flex-basis:75px;font-size:56px}
-  .cake {width:min(290px,88%)}
-}
-@media(prefers-reduced-motion:reduce) {
-  *,*::before,*::after {animation:none!important;scroll-behavior:auto!important}
-}
+textarea{min-height:120px;resize:vertical}
+footer{text-align:center;padding:28px;color:#e8b4cb}
+a{color:#ffd77b}
 </style>
 </head>
 
 <body class="cover-open">
-<div id="confetti" aria-hidden="true"></div>
 
-<!-- COVER -->
 <div class="cover" id="cover">
   <div class="cover-card">
-    <div class="heart">💗</div>
-    <div class="eyebrow">A little invitation from the heart</div>
-    <h1>Celebrate <span>with Cyprian</span></h1>
-    <p>A new chapter, a grateful heart, and another year of life to cherish.</p>
-    <div class="cover-date">19 OCTOBER · BIRTHDAY CELEBRATION</div>
-    <button class="btn primary" id="enterBtn" type="button">Open the celebration ✨</button>
-    <button class="btn secondary" id="coverShare" type="button">Share invitation on WhatsApp</button>
+    <div class="eyebrow">A special day • 19 October</div>
+    <div class="cake">🎂</div>
+    <h1>Happy Birthday,<br>Cyprian!</h1>
+    <p>A new year of life, hope, blessings and beautiful memories awaits.</p>
+    <button
+      class="btn primary"
+      id="enterBtn"
+      type="button"
+      onclick="openBirthdayCelebration()">
+      Open the celebration ✨
+    </button>
+    <p><small>Made with love to celebrate you 💛</small></p>
   </div>
 </div>
 
-<header class="wrap">
-  <a class="brand" href="#">CYP<span>RIAN</span> ♥</a>
-  <nav>
-    <a href="#story">My Story</a>
-    <a href="#scripture">Scripture</a>
-    <a href="#cake">Birthday Cake</a>
-    <a href="#wishes">Birthday Wishes</a>
-    <a href="#gift">Send a Gift</a>
-  </nav>
-</header>
+<main id="birthdayContent">
+  <section class="hero">
+    <div class="eyebrow">Today is a celebration of you</div>
+    <h1>Happy Birthday, Cyprian! 🎉</h1>
+    <div class="cake">🎂 🥳 🎁</div>
+    <p>May your new year bring you peace, wisdom, success and countless reasons to smile.</p>
+    <div class="clock" id="kenyaClock">Kenya time: loading...</div>
+    <p class="gold">19 October • Your special day</p>
+    <button class="btn secondary" type="button" onclick="toggleMusic()">🎵 Play / Pause Music</button>
+    <audio id="birthdayMusic" loop>
+      <source src="https://cdn.pixabay.com/audio/2022/10/25/audio_946b7a2c31.mp3" type="audio/mpeg">
+    </audio>
+  </section>
 
-<main>
-<section class="wrap hero" id="home">
-  <div>
-    <div class="pill">✦ A new chapter begins · 19 October</div>
-    <div class="eyebrow" style="margin-top:22px">Celebrating life, growth &amp; purpose</div>
-    <h2>It's my <span>birthday.</span></h2>
-    <p class="lead">I'm Cyprian. Born on 19 October 2005, grateful for every lesson, every blessing, and every person who has been part of my journey.</p>
-
-    <div class="actions">
-      <a class="btn primary" href="#wishes">💌 Leave a Birthday Wish</a>
-      <a class="btn secondary" href="#gift">🎁 Send a Gift</a>
-      <button class="btn secondary" id="shareBtn" type="button">↗ Share Invitation</button>
+  <section class="section">
+    <h2>A promise of hope 🙏</h2>
+    <div class="scripture">
+      “For I know the plans I have for you,” declares the Lord,
+      “plans to prosper you and not to harm you, plans to give you hope and a future.”
+      <br><strong class="gold">— Jeremiah 29:11</strong>
     </div>
+    <p>May God guide your steps, strengthen you through challenges and bless the work of your hands.</p>
+  </section>
 
-    <div class="clock-card">
-      <div class="clock-label">✦ KENYA · EAST AFRICAN TIME ✦</div>
-      <div class="clock-time" id="clockTime">--:--:--</div>
-      <div class="clock-date" id="clockDate">Loading date...</div>
-      <div class="clock-note" id="birthdayGreeting">Every new day is a gift from God 💗</div>
-    </div>
+  <section class="section">
+    <h2>My story, my journey ✨</h2>
+    <p>Every birthday is a reminder that life is a journey of growth. Every challenge teaches a lesson, every achievement deserves gratitude, and every new day brings another opportunity to become better.</p>
+    <p>May this next chapter be filled with courage, kindness, learning, meaningful friendships and dreams becoming reality.</p>
+  </section>
 
-    <div class="music">
-      <div>
-        <strong>🎵 Happy Birthday, Cyprian!</strong>
-        <p>Tap play to hear a birthday melody.</p>
-      </div>
-      <button class="btn secondary" id="musicBtn" type="button">▶ Play song</button>
-    </div>
-  </div>
+  <section class="section">
+    <h2>Birthday wishes 💌</h2>
+    <p>Leave a birthday message below. It will be sent privately through the configured form service.</p>
 
-  <div class="art">
-    <div class="art-card">
-      <div class="big">🎂</div>
-      <div class="eyebrow">With love &amp; gratitude</div>
-      <strong>19 October</strong>
-      <p>A new chapter begins</p>
-      <p style="color:#ffdc91">✦ Faith · Hope · Blessings ✦</p>
-    </div>
-  </div>
-</section>
-
-<section id="scripture" class="wrap content">
-  <div class="eyebrow">God's word for my new chapter</div>
-  <h2 class="section-title">A blessing for my life. 🙏</h2>
-  <div class="scripture">
-    <div style="font-size:35px">✝️ ✨</div>
-    <div class="eyebrow">My birthday scripture</div>
-    <blockquote>“For I know the plans I have for you,” declares the LORD, “plans to prosper you and not to harm you, plans to give you hope and a future.”</blockquote>
-    <div class="verse">JEREMIAH 29:11 · NIV</div>
-    <p class="prayer">Lord, thank You for the gift of life and for carrying me this far. As I begin another year, guide my steps, strengthen my faith, bless my family, and help me walk in wisdom, purpose, peace, and love. May everything I do bring glory to You. Amen. 💗</p>
-  </div>
-</section>
-
-<section id="cake" class="wrap content">
-  <div class="eyebrow">A little birthday magic</div>
-  <h2 class="section-title">Make a birthday wish! 🎂</h2>
-  <p class="muted">Make a wish, then tap to blow out the candles!</p>
-
-  <div class="cake-stage" id="cakeStage">
-    <h3>A cake made for Cyprian</h3>
-    <p class="cake-subtitle">May your new year shine with joy and blessings.</p>
-    <div class="cake" role="img" aria-label="Decorative pink birthday cake with five glowing candles">
-      <div class="candles">
-        <div class="candle"><span class="flame"></span></div>
-        <div class="candle"><span class="flame"></span></div>
-        <div class="candle"><span class="flame"></span></div>
-        <div class="candle"><span class="flame"></span></div>
-        <div class="candle"><span class="flame"></span></div>
-      </div>
-      <div class="cake-top"></div>
-      <div class="cake-body">
-        <div class="icing-drops"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-      </div>
-      <div class="cake-bottom"></div>
-      <div class="cake-plate"></div>
-    </div>
-    <div class="cake-message">✨ Happy Birthday, Cyprian! ✨</div>
-    <div class="cake-actions">
-      <button class="btn primary" id="blowBtn" type="button">🌬️ Blow out the candles</button>
-      <button class="btn secondary" id="relightBtn" type="button">🕯️ Relight candles</button>
-    </div>
-    <div class="cake-status" id="cakeStatus" role="status">Close your eyes, make a wish, and let the magic begin. 💗</div>
-  </div>
-</section>
-
-<section id="story" class="wrap content">
-  <div class="eyebrow">A note to myself</div>
-  <h2 class="section-title">Growing with gratitude.</h2>
-  <p class="muted">A little reminder of where I've been, what I've learned, and where I'm going.</p>
-  <div class="panel">
-    <p>Today, I celebrate the gift of life and the journey that continues to shape me. I'm grateful to God for bringing me this far, for the lessons in difficult seasons, the people who have encouraged me, and the opportunities still ahead.</p>
-    <p>As I step into a new chapter, I choose courage over fear, progress over perfection, and faith over doubt. I will keep learning, keep growing, and keep working towards the person I know I can become.</p>
-    <p>May this year bring wisdom, good health, peace, purpose, and the strength to keep moving forward. The story is still being written.</p>
-    <p class="signature">With gratitude, — Cyprian ✨</p>
-  </div>
-</section>
-
-<section id="gift" class="wrap content">
-  <div class="gift">
-    <div class="gift-art" aria-hidden="true">🎁</div>
-    <div class="gift-copy">
-      <div class="eyebrow">A little kindness</div>
-      <h2>Send a little birthday love. 💚</h2>
-      <p class="muted">Your wishes and kindness mean a lot. If you'd like to send a birthday gift, you're welcome to use my M-PESA payment page. Every gift is optional and appreciated.</p>
-      <div class="gift-note">✨ Every kind gesture is appreciated. Thank you for being part of my day.</div>
-    </div>
-    <a class="btn gift-button" href="https://cyprian.courtneytech.space" target="_blank" rel="noopener noreferrer">🎁 Send a Birthday Gift · M-PESA STK Push ↗</a>
-  </div>
-</section>
-
-<section id="wishes" class="wrap content">
-  <div class="eyebrow">A message to keep</div>
-  <h2 class="section-title">Leave me a birthday wish.</h2>
-  <p class="muted">Write a message and include your name. I'd love to know who sent it.</p>
-
-  <div class="form-grid">
-    <form class="panel" id="wishForm" action="https://formspree.io/f/xoejypaw" method="POST">
-      <label for="sender">Your name</label>
-      <input id="sender" name="name" placeholder="e.g. Alex" maxlength="80" autocomplete="name" required>
-
-      <label for="message">Your message</label>
-      <textarea id="message" name="message" placeholder="Write your birthday wish for Cyprian..." maxlength="1500" required></textarea>
-
-      <input type="hidden" name="_subject" value="A new birthday wish for Cyprian">
-      <button class="btn primary" id="submitWish" type="submit">💌 Send Birthday Wish</button>
-      <div class="status" id="formStatus" role="status"></div>
-      <p class="muted" style="font-size:12px">Your wish is sent privately and is not displayed publicly.</p>
+    <form action="https://formspree.io/f/xoejypaw" method="POST">
+      <input type="text" name="name" placeholder="Your name" required>
+      <textarea name="message" placeholder="Write your birthday wish..." required></textarea>
+      <input type="hidden" name="_subject" value="A private birthday wish for Cyprian">
+      <button class="btn primary" type="submit">Send Birthday Wish 💌</button>
     </form>
+    <p><small>Messages are submitted privately and are not displayed publicly on this page.</small></p>
+  </section>
 
-    <div class="panel">
-      <div style="font-size:38px">💌</div>
-      <h3 style="font:normal 28px Georgia,serif">Your words mean a lot.</h3>
-      <p class="muted">Thank you for taking a moment to leave a kind message.</p>
-      <p class="muted">♥ No visitor account required</p>
-      <p class="muted">♥ Name and message only</p>
-      <p class="muted">♥ Messages are not shown publicly</p>
-    </div>
-  </div>
-</section>
+  <section class="section" style="text-align:center">
+    <h2>Send a birthday gift 🎁</h2>
+    <p>Your thoughtfulness is appreciated. Tap below to open the M-PESA gift page.</p>
+    <a class="btn primary" href="https://cyprian.courtneytech.space" target="_blank" rel="noopener">
+      🎁 Give a Gift via M-PESA
+    </a>
+  </section>
+
+  <section class="section" style="text-align:center">
+    <h2>Share the celebration 💖</h2>
+    <button class="btn secondary" type="button" onclick="shareBirthday()">Share Birthday Website</button>
+  </section>
+
+  <footer>Made with ❤️ for Cyprian Kipchumba</footer>
 </main>
 
-<footer class="wrap">
-  <div>Made with love, faith and gratitude. ♥</div>
-  <div>© <span id="year"></span> Cyprian Kipchumba</div>
-  <a href="#home">Back to top ↑</a>
-</footer>
-
 <script>
-(function () {
-  "use strict";
+function openBirthdayCelebration(){
+  var cover = document.getElementById('cover');
+  var body = document.body;
 
-  const cover = docume
+  if (cover) {
+    cover.classList.add('closed');
+    cover.setAttribute('aria-hidden','true');
+  }
+
+  body.classList.remove('cover-open');
+  body.style.overflow = 'auto';
+
+  window.scrollTo(0,0);
+}
+
+document.addEventListener('DOMContentLoaded', function(){
+  var cover = document.getElementById('cover');
+  var button = document.getElementById('enterBtn');
+
+  if (cover && button) {
+    button.addEventListener('click', openBirthdayCelebration);
+  }
+
+  updateKenyaClock();
+  setInterval(updateKenyaClock, 1000);
+});
+
+function updateKenyaClock(){
+  var clock = document.getElementById('kenyaClock');
+  if (!clock) return;
+
+  clock.textContent = 'Kenya time: ' +
+    new Date().toLocaleString('en-KE', {
+      timeZone:'Africa/Nairobi',
+      dateStyle:'medium',
+      timeStyle:'medium'
+    });
+}
+
+function toggleMusic(){
+  var music = document.getElementById('birthdayMusic');
+  if (!music) return;
+
+  if (music.paused) {
+    music.play().catch(function(){
+      alert('Tap Play / Pause Music again to allow playback.');
+    });
+  } else {
+    music.pause();
+  }
+}
+
+function shareBirthday(){
+  var shareData = {
+    title:'Happy Birthday, Cyprian!',
+    text:'Join me in celebrating Cyprian!',
+    url:window.location.href
+  };
+
+  if (navigator.share) {
+    navigator.share(shareData).catch(function(){});
+  } else if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(window.location.href)
+      .then(function(){alert('Website link copied!');})
+      .catch(function(){prompt('Copy this website link:',window.location.href);});
+  } else {
+    prompt('Copy this website link:',window.location.href);
+  }
+}
+</script>
+
+</body>
+</html>
