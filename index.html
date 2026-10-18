@@ -4,8 +4,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#35172b">
-<meta name="description" content="Celebrate Cyprian's birthday on 19 October. Leave a birthday wish and share the joy.">
+<meta name="theme-color" content="#e98eaf">
+<meta name="description" content="Celebrate Cyprian's birthday on 19 October. A celebration of life, faith, blessings and gratitude.">
 <title>Cyprian | Birthday Celebration</title>
 
 <style>
@@ -16,224 +16,314 @@
   --gold:#f2d39a;
   --white:#fff7fa;
   --muted:#dec7d2;
+  --green:#087443;
 }
 * {box-sizing:border-box}
 html {scroll-behavior:smooth;scroll-padding-top:20px}
 body {
-  margin:0;
-  color:var(--white);
-  background:radial-gradient(ellipse at top,#63314f 0%,var(--bg) 60%);
-  font-family:Arial,Helvetica,sans-serif;
-  line-height:1.65;
+  margin:0;color:var(--white);
+  background:radial-gradient(ellipse at top,#63314f 0%,var(--bg) 65%);
+  font-family:Arial,Helvetica,sans-serif;line-height:1.65;
 }
 .wrap {width:min(1000px,92%);margin:auto}
-button,a { -webkit-tap-highlight-color:transparent }
+button,a {-webkit-tap-highlight-color:transparent}
 button {font:inherit;cursor:pointer}
 a {color:inherit}
+button:disabled {opacity:.65;cursor:wait}
+
 .cover {
-  position:fixed;
-  inset:0;
-  z-index:100;
-  display:grid;
-  place-items:center;
-  padding:20px;
-  background:radial-gradient(ellipse at top,#693550,#190e18 72%);
-  transition:opacity .5s,visibility .5s;
+  position:fixed;inset:0;z-index:100;
+  display:grid;place-items:center;padding:20px;
+  overflow:auto;
+  background:
+    radial-gradient(ellipse at 20% 15%,#ffcada 0%,transparent 38%),
+    radial-gradient(ellipse at 90% 85%,#d89bdf 0%,transparent 35%),
+    linear-gradient(145deg,#f8bfd1,#c96c98 52%,#4a203f);
+  transition:opacity .6s,visibility .6s;
 }
-.cover.hidden {
-  opacity:0;
-  visibility:hidden;
-  pointer-events:none;
-}
+.cover.hidden {opacity:0;visibility:hidden;pointer-events:none}
 .cover-card {
-  width:min(500px,100%);
-  text-align:center;
-  padding:35px 23px;
-  border:1px solid #f5a9c055;
-  border-radius:28px;
-  background:#ffffff08;
-  box-shadow:0 20px 70px #0005;
+  width:min(500px,100%);text-align:center;padding:30px 23px;
+  border:1px solid #fff9;border-radius:28px;
+  background:linear-gradient(145deg,#ffffff38,#ffffff0d);
+  box-shadow:0 22px 75px #42102f50;
+  backdrop-filter:blur(10px);
 }
 .heart {font-size:48px;animation:pulse 1.8s infinite}
 .eyebrow {
-  color:var(--gold);
-  font-size:12px;
-  font-weight:bold;
-  letter-spacing:3px;
-  text-transform:uppercase;
+  color:var(--gold);font-size:12px;font-weight:bold;
+  letter-spacing:3px;text-transform:uppercase;
 }
+.cover .eyebrow {color:#fff8e8}
 .cover h1 {
-  font-family:Georgia,serif;
-  font-size:clamp(42px,10vw,65px);
-  font-weight:normal;
-  line-height:1.05;
-  margin:15px 0;
+  font-family:Georgia,serif;font-size:clamp(40px,10vw,65px);
+  font-weight:normal;line-height:1.05;margin:15px 0;
+  color:#fff9fb;text-shadow:0 3px 20px #66204040;
 }
-.cover h1 span {display:block;color:var(--pink);font-style:italic}
-.cover p {color:var(--muted)}
-.cover-date {color:var(--gold);font-size:12px;letter-spacing:2px;margin:20px 0}
+.cover h1 span {display:block;color:#ffe2a8;font-style:italic}
+.cover p {color:#fff7fa}
+.cover-date {color:#fff1ca;font-size:12px;letter-spacing:2px;margin:20px 0}
 .btn {
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  text-decoration:none;
-  border:0;
-  border-radius:13px;
-  padding:13px 18px;
-  min-height:48px;
-  font-weight:bold;
+  display:inline-flex;align-items:center;justify-content:center;gap:7px;
+  text-align:center;text-decoration:none;border:0;border-radius:13px;
+  padding:13px 18px;min-height:48px;font-weight:bold;
+  transition:transform .2s,filter .2s,box-shadow .2s;
 }
-.primary {background:linear-gradient(120deg,#ffdce7,var(--pink));color:#35172b}
+.btn:hover {transform:translateY(-2px);filter:brightness(1.06)}
+.primary {
+  background:linear-gradient(120deg,#ffe7ef,var(--pink));
+  color:#35172b;box-shadow:0 7px 20px #e77ba333;
+}
 .secondary {background:#ffffff0b;border:1px solid #f5a9c055;color:white}
 .cover .btn {width:100%;margin:5px 0}
+.cover .primary {background:linear-gradient(120deg,#fff1d0,#f5d18c);color:#542441}
 header {
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:15px;
-  flex-wrap:wrap;
-  padding:22px 0;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:15px;flex-wrap:wrap;padding:22px 0;
 }
 .brand {font-weight:900;letter-spacing:3px;text-decoration:none}
 .brand span {color:var(--pink)}
 nav {display:flex;gap:15px;flex-wrap:wrap}
 nav a {color:var(--muted);text-decoration:none;font-size:14px}
+nav a:hover {color:var(--gold)}
 .hero {
-  display:grid;
-  grid-template-columns:1.2fr .8fr;
-  gap:30px;
-  align-items:center;
-  padding:50px 0;
+  display:grid;grid-template-columns:1.2fr .8fr;
+  gap:30px;align-items:center;padding:45px 0;
 }
 .pill {
-  display:inline-block;
-  border:1px solid #f5a9c055;
-  border-radius:30px;
-  padding:7px 13px;
-  color:#ffe2ec;
-  font-size:13px;
+  display:inline-block;border:1px solid #f5a9c055;border-radius:30px;
+  padding:7px 13px;color:#ffe2ec;font-size:13px;
 }
 .hero h2 {
   font:normal clamp(50px,9vw,90px)/.98 Georgia,serif;
-  letter-spacing:-3px;
-  margin:20px 0;
+  letter-spacing:-3px;margin:20px 0;
 }
 .hero h2 span {display:block;color:var(--pink);font-style:italic}
 .lead {font-size:17px;color:var(--muted);max-width:550px}
 .actions {display:flex;gap:10px;flex-wrap:wrap;margin:22px 0}
-.art {
-  min-height:300px;
-  display:grid;
-  place-items:center;
-}
+
+.art {min-height:320px;display:grid;place-items:center}
 .art-card {
-  width:min(300px,80vw);
-  aspect-ratio:.85;
-  border:1px solid #f5a9c055;
-  border-radius:150px 150px 25px 25px;
-  background:linear-gradient(150deg,#f5a9c020,#ffffff05);
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  padding:20px;
+  width:min(330px,85vw);min-height:320px;
+  border:1px solid #f5d39a66;border-radius:150px 150px 25px 25px;
+  background:
+    radial-gradient(ellipse at 50% 25%,#f5a9c029,transparent 60%),
+    linear-gradient(150deg,#f5a9c020,#ffffff05);
+  display:flex;flex-direction:column;justify-content:center;
+  align-items:center;text-align:center;padding:20px;
   box-shadow:0 20px 60px #0003;
 }
-.art-card .big {font-size:90px;color:var(--pink)}
+.art-card .big {font-size:85px;line-height:1.2;filter:drop-shadow(0 5px 14px #f5a9c055)}
 .art-card strong {font:normal 28px Georgia,serif;color:var(--gold)}
-.art-card p {color:var(--muted)}
-.countdown {
-  margin-top:25px;
-  padding:18px;
-  border:1px solid #f5a9c044;
-  border-radius:20px;
-  background:#ffffff06;
+.art-card p {color:var(--muted);margin-bottom:0}
+
+.clock-card {
+  margin-top:25px;padding:20px;text-align:center;
+  border:1px solid #f2d39a66;border-radius:22px;
+  background:linear-gradient(140deg,#47253d,#251522);
+  box-shadow:0 12px 35px #0002;
 }
-.countdown-title {color:var(--muted);font-size:14px;margin-bottom:12px}
-.timer {display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
-.time {
-  background:#160d17;
-  border:1px solid #ffffff12;
-  border-radius:12px;
-  text-align:center;
-  padding:10px 3px;
+.clock-label {color:var(--gold);font-size:12px;letter-spacing:2px;font-weight:bold}
+.clock-time {
+  font:normal clamp(34px,8vw,49px) Georgia,serif;
+  color:#fff0f6;letter-spacing:1px;margin:3px 0;
+  font-variant-numeric:tabular-nums;
 }
-.time strong {display:block;color:var(--gold);font-size:clamp(20px,5vw,30px)}
-.time small {font-size:10px;color:var(--muted);letter-spacing:1px}
+.clock-date {color:var(--muted);font-size:14px}
+.clock-note {font-size:12px;color:#f5a9c0;margin-top:8px}
+
+.music {
+  display:flex;align-items:center;justify-content:space-between;
+  gap:15px;flex-wrap:wrap;padding:16px;margin-top:18px;
+  border:1px solid #ffffff18;border-radius:17px;background:#ffffff06;
+}
+.music p {margin:3px 0;color:var(--muted);font-size:13px}
+
 section.content {padding:35px 0}
 .section-title {font:normal clamp(32px,6vw,48px)/1.1 Georgia,serif;margin:8px 0 15px}
 .muted {color:var(--muted)}
 .panel {
   background:linear-gradient(140deg,#382136,#241622);
-  border:1px solid #ffffff12;
-  border-radius:22px;
-  padding:25px;
+  border:1px solid #ffffff12;border-radius:22px;padding:25px;
 }
 .panel p {color:#f0dce6}
 .signature {color:var(--gold);font-weight:bold}
+
+/* Bible scripture */
+.scripture {
+  position:relative;overflow:hidden;
+  background:
+    radial-gradient(ellipse at top right,#f5a9c028,transparent 55%),
+    linear-gradient(140deg,#fff4ed,#f9dfeb 58%,#ead8f5);
+  color:#51243f;border:1px solid #f2d39a;
+  border-radius:26px;padding:clamp(25px,5vw,42px);
+  box-shadow:0 18px 45px #0002;text-align:center;
+}
+.scripture::before,.scripture::after {
+  content:"✦";position:absolute;color:#c28b3b;
+  font-size:28px;opacity:.6;
+}
+.scripture::before {top:15px;left:18px}
+.scripture::after {bottom:12px;right:18px}
+.scripture .eyebrow {color:#9c5c6e}
+.scripture blockquote {
+  font:italic clamp(21px,4.8vw,32px)/1.5 Georgia,serif;
+  margin:20px auto;max-width:760px;
+}
+.scripture .verse {font-weight:bold;color:#98652d;letter-spacing:1px}
+.prayer {color:#70485e;max-width:700px;margin:18px auto 0}
+
+/* Large decorative birthday cake */
+.cake-stage {
+  margin-top:20px;padding:25px 14px 22px;text-align:center;
+  overflow:hidden;border:1px solid #f2d39a55;border-radius:25px;
+  background:
+    radial-gradient(ellipse at top,#773b5c 0%,transparent 70%),
+    linear-gradient(145deg,#321b30,#1d111e);
+}
+.cake-stage h3 {font:normal clamp(26px,6vw,36px) Georgia,serif;margin:5px 0;color:#ffe2ec}
+.cake-stage .cake-subtitle {color:var(--muted);font-size:14px;margin:0 0 22px}
+.cake {
+  width:min(330px,88%);margin:0 auto;
+  position:relative;padding-top:52px;
+  filter:drop-shadow(0 15px 14px #0005);
+}
+.candles {
+  display:flex;justify-content:center;gap:17px;
+  height:68px;align-items:flex-end;position:relative;z-index:3;
+}
+.candle {
+  width:13px;height:53px;border-radius:4px 4px 2px 2px;
+  position:relative;
+  background:repeating-linear-gradient(135deg,#fff0dc 0 7px,#e89ab7 7px 13px);
+  box-shadow:inset -3px 0 3px #9a466144;
+}
+.flame {
+  position:absolute;width:13px;height:21px;left:0;top:-24px;
+  border-radius:50% 50% 45% 45%;
+  background:radial-gradient(ellipse at 50% 70%,#fffbd3 0 17%,#ffe47b 30%,#ff9c42 65%,#f65b3b 100%);
+  transform-origin:50% 90%;
+  animation:flicker .65s infinite alternate;
+  box-shadow:0 0 12px #ffb744,0 0 26px #ff8b3d88;
+}
+.candle:nth-child(2) .flame {animation-delay:-.2s}
+.candle:nth-child(3) .flame {animation-delay:-.4s}
+.candle:nth-child(4) .flame {animation-delay:-.1s}
+.candle:nth-child(5) .flame {animation-delay:-.3s}
+.cake-top {
+  height:35px;border-radius:50%;
+  background:linear-gradient(180deg,#fff1e8,#f6bfd0 70%,#e99ab7);
+  border:2px solid #ffe4e7;position:relative;z-index:2;
+  margin-bottom:-14px;
+}
+.cake-top::after {
+  content:"";position:absolute;inset:7px 15px;
+  border-radius:50%;border:2px dotted #d88c56;
+}
+.cake-body {
+  height:86px;position:relative;
+  background:linear-gradient(90deg,#d979a1,#ffe0e8 25%,#f8b4cd 60%,#cf7099);
+  border-radius:8px 8px 15px 15px;
+  border-bottom:8px solid #c06a8e;
+  box-shadow:inset 0 -8px #ffffff2c;
+}
+.cake-body::before {
+  content:"";position:absolute;top:-5px;left:0;right:0;height:20px;
+  background:#fff0e7;border-radius:50% 50% 8px 8px;
+}
+.icing-drops {
+  position:absolute;top:8px;left:0;right:0;display:flex;
+  justify-content:space-around;z-index:2;
+}
+.icing-drops i {
+  display:block;width:13px;height:22px;border-radius:0 0 10px 10px;
+  background:#fff0e7;
+}
+.cake-bottom {
+  height:22px;margin:0 -10px;
+  background:linear-gradient(#f2d39a,#c78a50);
+  border-radius:4px 4px 13px 13px;
+  box-shadow:0 7px 0 #8f5c42;
+}
+.cake-plate {
+  height:14px;margin:9px -28px 0;
+  background:linear-gradient(#fff2df,#d8b8b0);
+  border-radius:50%;
+  box-shadow:0 7px 12px #0005;
+}
+.cake-message {
+  font:italic 18px Georgia,serif;color:#ffe0a4;margin:24px 0 8px;
+}
+.cake-actions {display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:15px}
+.cake-status {min-height:25px;color:#ffe2ec;font-size:14px;margin-top:12px}
+.cake-stage.blown .flame {display:none}
+.cake-stage.blown .candles {opacity:.8}
+@keyframes flicker {
+  0% {transform:rotate(-5deg) scale(.95,1)}
+  50% {transform:rotate(4deg) scale(1.06,.96)}
+  100% {transform:rotate(-2deg) scale(.96,1.08)}
+}
+
+/* Gift */
 .gift {
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:20px;
-  flex-wrap:wrap;
-  background:linear-gradient(120deg,#49283e,#281a2b);
-  border:1px solid #f2d39a66;
-  border-radius:24px;
-  padding:25px;
+  position:relative;overflow:hidden;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:20px;flex-wrap:wrap;
+  background:
+    radial-gradient(ellipse at 90% 10%,#f2d39a20,transparent 45%),
+    linear-gradient(120deg,#143e32,#1b2d2b 50%,#352039);
+  border:1px solid #f2d39a99;border-radius:25px;padding:25px;
+  box-shadow:0 18px 40px #0002;
+}
+.gift::after {
+  content:"✦  ✧  ✦";position:absolute;right:20px;top:8px;
+  color:#f2d39a99;letter-spacing:10px;pointer-events:none;
 }
 .gift-copy {flex:1;min-width:220px}
-.gift h2 {font:normal 32px Georgia,serif;margin:10px 0}
+.gift h2 {font:normal 32px Georgia,serif;margin:10px 0;color:#fff0f5}
+.gift-art {
+  width:100px;height:90px;flex:0 0 100px;
+  position:relative;display:grid;place-items:center;
+  font-size:68px;filter:drop-shadow(0 8px 8px #0005);
+  animation:giftFloat 3s ease-in-out infinite;
+}
+.gift-art span {position:relative;z-index:1}
+.gift .gift-button {
+  background:linear-gradient(120deg,#ffe5a4,#f2c76b,#dba34c);
+  color:#26372c;border:1px solid #fff0c5;
+  box-shadow:0 7px 24px #e5b45433;
+}
+.gift-note {font-size:12px;color:#cfe4d8;margin-top:12px}
+@keyframes giftFloat {50%{transform:translateY(-5px) rotate(2deg)}}
+
 .form-grid {display:grid;grid-template-columns:1fr 1fr;gap:18px}
 label {display:block;font-weight:bold;margin:14px 0 7px}
 input,textarea {
-  width:100%;
-  background:#190f19;
-  color:white;
-  border:1px solid #ffffff2b;
-  border-radius:11px;
-  padding:13px;
-  font:inherit;
+  width:100%;background:#190f19;color:white;
+  border:1px solid #ffffff2b;border-radius:11px;
+  padding:13px;font:inherit;
 }
 textarea {min-height:130px;resize:vertical}
 form .btn {width:100%;margin-top:16px}
 .status {display:none;margin-top:14px;padding:12px;border-radius:10px}
-.music {
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:15px;
-  flex-wrap:wrap;
-  padding:16px;
-  margin-top:18px;
-  border:1px solid #ffffff18;
-  border-radius:17px;
-  background:#ffffff06;
-}
-.music p {margin:3px 0;color:var(--muted);font-size:13px}
 footer {
-  border-top:1px solid #ffffff18;
-  margin-top:35px;
-  padding:25px 0;
-  color:var(--muted);
-  font-size:13px;
-  display:flex;
-  justify-content:space-between;
-  gap:10px;
-  flex-wrap:wrap;
+  border-top:1px solid #ffffff18;margin-top:35px;padding:25px 0;
+  color:var(--muted);font-size:13px;display:flex;
+  justify-content:space-between;gap:10px;flex-wrap:wrap;
 }
 #confetti {position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:150}
 .piece {position:absolute;top:-20px;width:9px;height:13px;animation:fall 3s linear forwards}
 @keyframes fall {to{transform:translateY(110vh) rotate(750deg);opacity:0}}
 @keyframes pulse {50%{transform:scale(1.12)}}
+
 @media(max-width:700px) {
   .hero {grid-template-columns:1fr;padding:30px 0}
-  .art {min-height:250px}
+  .art {min-height:270px}
   .form-grid {grid-template-columns:1fr}
   nav {gap:10px}
   .hero h2 {letter-spacing:-2px}
+  .gift-art {width:75px;flex-basis:75px;font-size:56px}
+  .cake {width:min(290px,88%)}
 }
 @media(prefers-reduced-motion:reduce) {
   *,*::before,*::after {animation:none!important;scroll-behavior:auto!important}
@@ -260,6 +350,8 @@ footer {
   <a class="brand" href="#">CYP<span>RIAN</span> ♥</a>
   <nav>
     <a href="#story">My Story</a>
+    <a href="#scripture">Scripture</a>
+    <a href="#cake">Birthday Cake</a>
     <a href="#wishes">Birthday Wishes</a>
     <a href="#gift">Send a Gift</a>
   </nav>
@@ -279,29 +371,76 @@ footer {
       <button class="btn secondary" id="shareBtn" type="button">↗ Share Invitation</button>
     </div>
 
-    <div class="countdown">
-      <div class="countdown-title" id="countdownLabel">Counting down to 19 October</div>
-      <div class="timer">
-        <div class="time"><strong id="days">--</strong><small>DAYS</small></div>
-        <div class="time"><strong id="hours">--</strong><small>HOURS</small></div>
-        <div class="time"><strong id="minutes">--</strong><small>MINUTES</small></div>
-        <div class="time"><strong id="seconds">--</strong><small>SECONDS</small></div>
-      </div>
+    <div class="clock-card">
+      <div class="clock-label">✦ KENYA · EAST AFRICAN TIME ✦</div>
+      <div class="clock-time" id="clockTime" aria-live="off">--:--:--</div>
+      <div class="clock-date" id="clockDate">Loading date...</div>
+      <div class="clock-note" id="birthdayGreeting">Every new day is a gift from God 💗</div>
     </div>
 
     <div class="music">
-      <div><strong>🎵 Birthday melody</strong><p>Optional gentle instrumental tones.</p></div>
-      <button class="btn secondary" id="musicBtn" type="button">▶ Play music</button>
+      <div>
+        <strong>🎵 Happy Birthday, Cyprian!</strong>
+        <p>Play the birthday melody and celebrate.</p>
+      </div>
+      <button class="btn secondary" id="musicBtn" type="button">▶ Play song</button>
     </div>
   </div>
 
   <div class="art">
     <div class="art-card">
-      <div class="big">♡</div>
+      <div class="big">🎂</div>
       <div class="eyebrow">With love &amp; gratitude</div>
       <strong>19 October</strong>
       <p>A new chapter begins</p>
+      <p style="color:#f2d39a">✦ Faith · Hope · Blessings ✦</p>
     </div>
+  </div>
+</section>
+
+<section id="scripture" class="wrap content">
+  <div class="eyebrow">God's word for my new chapter</div>
+  <h2 class="section-title">A blessing for my life. 🙏</h2>
+  <div class="scripture">
+    <div style="font-size:35px">✝️ ✨</div>
+    <div class="eyebrow">My birthday scripture</div>
+    <blockquote>“For I know the plans I have for you,” declares the LORD, “plans to prosper you and not to harm you, plans to give you hope and a future.”</blockquote>
+    <div class="verse">JEREMIAH 29:11 · NIV</div>
+    <p class="prayer">Lord, thank You for the gift of life and for carrying me this far. As I begin another year, guide my steps, strengthen my faith, bless my family, and help me walk in wisdom, purpose, peace, and love. May everything I do bring glory to You. Amen. 💗</p>
+  </div>
+</section>
+
+<section id="cake" class="wrap content">
+  <div class="eyebrow">A little birthday magic</div>
+  <h2 class="section-title">Make a birthday wish! 🎂</h2>
+  <p class="muted">The candles are glowing just for this special day. Make a wish, then tap to blow them out!</p>
+
+  <div class="cake-stage" id="cakeStage">
+    <h3>A cake made for Cyprian</h3>
+    <p class="cake-subtitle">May your new year shine with joy and blessings.</p>
+
+    <div class="cake" role="img" aria-label="Decorative pink birthday cake with five glowing candles">
+      <div class="candles" id="candles">
+        <div class="candle"><span class="flame"></span></div>
+        <div class="candle"><span class="flame"></span></div>
+        <div class="candle"><span class="flame"></span></div>
+        <div class="candle"><span class="flame"></span></div>
+        <div class="candle"><span class="flame"></span></div>
+      </div>
+      <div class="cake-top"></div>
+      <div class="cake-body">
+        <div class="icing-drops"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      </div>
+      <div class="cake-bottom"></div>
+      <div class="cake-plate"></div>
+    </div>
+
+    <div class="cake-message">✨ Happy Birthday, Cyprian! ✨</div>
+    <div class="cake-actions">
+      <button class="btn primary" id="blowBtn" type="button">🌬️ Blow out the candles</button>
+      <button class="btn secondary" id="relightBtn" type="button">🕯️ Relight candles</button>
+    </div>
+    <div class="cake-status" id="cakeStatus" role="status">Close your eyes, make a wish, and let the magic begin. 💗</div>
   </div>
 </section>
 
@@ -319,12 +458,14 @@ footer {
 
 <section id="gift" class="wrap content">
   <div class="gift">
+    <div class="gift-art" aria-hidden="true"><span>🎁</span></div>
     <div class="gift-copy">
       <div class="eyebrow">A little kindness</div>
-      <h2>Want to make my day special?</h2>
+      <h2>Send a little birthday love. 💚</h2>
       <p class="muted">Your wishes and kindness mean a lot. If you'd like to send a birthday gift, you're welcome to use my M-Pesa payment page. Every gift is optional and appreciated.</p>
+      <div class="gift-note">✨ Every kind gesture is appreciated. Thank you for being part of my day.</div>
     </div>
-    <a class="btn primary" href="https://cyprian.courtneytech.space" target="_blank" rel="noopener noreferrer">🎁 Send a Gift (STK Push) ↗</a>
+    <a class="btn gift-button" href="https://cyprian.courtneytech.space" target="_blank" rel="noopener noreferrer">🎁 Send a Birthday Gift · M-PESA STK Push ↗</a>
   </div>
 </section>
 
@@ -353,177 +494,4 @@ footer {
       <p class="muted">Thank you for taking a moment to leave a kind message.</p>
       <p class="muted">♥ No visitor account required</p>
       <p class="muted">♥ Name and message only</p>
-      <p class="muted">♥ Messages are not shown publicly</p>
-    </div>
-  </div>
-</section>
-</main>
-
-<footer class="wrap">
-  <div>Made with <span style="color:var(--pink)">♥</span> for <strong>Cyprian</strong></div>
-  <div>19 October 2005 · A new chapter, a grateful heart.</div>
-</footer>
-
-<script>
-(function(){
-"use strict";
-
-const cover = document.getElementById("cover");
-const confettiLayer = document.getElementById("confetti");
-const siteUrl = "https://cypuu8439.github.io/CYPRIAN-BIRTHDAY/";
-
-function celebrate(){
-  cover.classList.add("hidden");
-  makeConfetti();
-  document.body.style.overflow = "auto";
-}
-
-document.getElementById("enterBtn").addEventListener("click", celebrate);
-
-function makeConfetti(){
-  const colors = ["#f5a9c0","#f2d39a","#ffffff","#d9a7e8","#ffe2ec"];
-  for(let i=0;i<70;i++){
-    const piece = document.createElement("i");
-    piece.className = "piece";
-    piece.style.left = Math.random()*100 + "%";
-    piece.style.backgroundColor = colors[Math.floor(Math.random()*colors.length)];
-    piece.style.animationDelay = Math.random()*0.8 + "s";
-    piece.style.animationDuration = (2.5+Math.random()*1.5) + "s";
-    confettiLayer.appendChild(piece);
-    setTimeout(()=>piece.remove(),4500);
-  }
-}
-
-function shareInvitation(){
-  const message = "You're invited to celebrate Cyprian's birthday on 19 October! 💗✨ Visit the birthday website and leave a wish: " + siteUrl;
-  const url = "https://wa.me/?text=" + encodeURIComponent(message);
-  window.open(url,"_blank");
-}
-document.getElementById("coverShare").addEventListener("click",shareInvitation);
-document.getElementById("shareBtn").addEventListener("click",shareInvitation);
-
-function nextBirthday(){
-  const now = new Date();
-  let year = now.getFullYear();
-  let target = new Date(year,9,19,0,0,0);
-  if(target <= now) target = new Date(year+1,9,19,0,0,0);
-  return target;
-}
-let target = nextBirthday();
-
-function updateCountdown(){
-  const now = new Date();
-  if(now >= target) target = nextBirthday();
-  let diff = Math.max(0,target-now);
-
-  const days = Math.floor(diff/86400000);
-  diff %= 86400000;
-  const hours = Math.floor(diff/3600000);
-  diff %= 3600000;
-  const minutes = Math.floor(diff/60000);
-  diff %= 60000;
-  const seconds = Math.floor(diff/1000);
-
-  document.getElementById("days").textContent = String(days).padStart(2,"0");
-  document.getElementById("hours").textContent = String(hours).padStart(2,"0");
-  document.getElementById("minutes").textContent = String(minutes).padStart(2,"0");
-  document.getElementById("seconds").textContent = String(seconds).padStart(2,"0");
-
-  const today = new Date();
-  const isBirthday = today.getMonth()===9 && today.getDate()===19;
-  document.getElementById("countdownLabel").textContent =
-    isBirthday ? "🎉 Happy birthday, Cyprian!" : "Counting down to 19 October";
-}
-updateCountdown();
-setInterval(updateCountdown,1000);
-
-/* Gentle browser-generated musical tones */
-let audioContext = null;
-let musicTimer = null;
-let musicOn = false;
-let noteIndex = 0;
-const notes = [523.25,659.25,783.99,659.25,587.33,698.46,880,698.46,523.25,659.25,783.99,1046.5];
-
-function playNote(){
-  if(!musicOn || !audioContext) return;
-  const oscillator = audioContext.createOscillator();
-  const gain = audioContext.createGain();
-  oscillator.type = "sine";
-  oscillator.frequency.value = notes[noteIndex % notes.length];
-  noteIndex++;
-  gain.gain.setValueAtTime(0.0001,audioContext.currentTime);
-  gain.gain.exponentialRampToValueAtTime(0.04,audioContext.currentTime+0.06);
-  gain.gain.exponentialRampToValueAtTime(0.0001,audioContext.currentTime+0.48);
-  oscillator.connect(gain);
-  gain.connect(audioContext.destination);
-  oscillator.start();
-  oscillator.stop(audioContext.currentTime+0.5);
-}
-function stopMusic(){
-  musicOn = false;
-  if(musicTimer){clearInterval(musicTimer);musicTimer=null;}
-  document.getElementById("musicBtn").textContent = "▶ Play music";
-}
-document.getElementById("musicBtn").addEventListener("click",async function(){
-  if(musicOn){stopMusic();return;}
-  try{
-    const AudioClass = window.AudioContext || window.webkitAudioContext;
-    if(!AudioClass){alert("Music is not supported by this browser.");return;}
-    if(!audioContext) audioContext = new AudioClass();
-    await audioContext.resume();
-    musicOn = true;
-    playNote();
-    musicTimer = setInterval(playNote,520);
-    this.textContent = "Ⅱ Pause music";
-  }catch(error){
-    stopMusic();
-    alert("Please tap play music again.");
-  }
-});
-document.addEventListener("visibilitychange",function(){
-  if(document.hidden && musicOn) stopMusic();
-});
-
-/* Birthday wishes form */
-const form = document.getElementById("wishForm");
-const status = document.getElementById("formStatus");
-const submit = document.getElementById("submitWish");
-
-form.addEventListener("submit",async function(event){
-  event.preventDefault();
-  status.style.display = "block";
-  status.style.background = "#3b2635";
-  status.style.color = "#ffe3ed";
-  status.textContent = "Sending your birthday wish...";
-  submit.disabled = true;
-
-  try{
-    const response = await fetch(form.action,{
-      method:"POST",
-      body:new FormData(form),
-      headers:{"Accept":"application/json"}
-    });
-    if(response.ok){
-      status.style.background = "#14352f";
-      status.style.color = "#a9f0d0";
-      status.textContent = "Thank you! Your birthday wish has been sent to Cyprian 💗";
-      form.reset();
-      makeConfetti();
-    }else{
-      status.style.background = "#4a2528";
-      status.style.color = "#ffe3ed";
-      status.textContent = "Sorry, the wish could not be sent. Please try again later.";
-    }
-  }catch(error){
-    status.style.background = "#4a2528";
-    status.style.color = "#ffe3ed";
-    status.textContent = "Connection problem. Check your internet and try again.";
-  }finally{
-    submit.disabled = false;
-  }
-});
-
-})();
-</script>
-</body>
-</html>
+      <p class="muted">♥ Messages are not shown publicly<
